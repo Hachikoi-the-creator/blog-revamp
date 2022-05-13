@@ -9,6 +9,10 @@ router.get('/contact', (req, res) => {
   res.render('post/contact', { title: 'Contact Page' });
 });
 
+router.get('/donations', (req, res) => {
+  res.render('post/donations', { title: 'Donations Page' });
+});
+
 router.get('/about', (req, res) => {
   res.render('post/about', { title: 'About Page' });
 });
