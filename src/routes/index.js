@@ -6,11 +6,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/contact', (req, res) => {
-  res.render('contact', { title: 'Contact Page' });
+  res.render('post/contact', { title: 'Contact Page' });
 });
 
 router.get('/about', (req, res) => {
-  res.render('about', { title: 'About Page' });
+  res.render('post/about', { title: 'About Page' });
 });
 
 module.exports = router;
