@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <!-- rel path -->
+    <%- include("../partials/head") %>
+  </head>
+
+  <body class="body">
+    <%- include("../partials/navbar") %>
+      <main class="post article">
+
+        <h1 id="intro">Intro</h1>
+        <p>Based on the blog <a
+            href="https://www.techomoro.com/how-to-create-a-multi-page-website-with-react-in-5-minutes/?unapproved=21780&amp;moderation-hash=7b965ee1540f7d9d4219e2a9911b4d26#comment-21780">Techomoro</a>
+          go there for a more in-depth explanation.</p>
+        <p>I just wanted to make a simple site whit multiple pages, but then I went to the docs and... they were
+          different, it seems like a transition was made, anyway copied the code, nothing worked and no error logs
+          whatsoever... </p>
+        <h1 id="instructions">Instructions</h1>
+        <h2 id="instal-vite">Instal Vite</h2>
+        <pre><code class="lang-shell"><span class="hljs-built_in">npm</span> init vite
+cd my_project 
+<span class="hljs-built_in">npm</span></code></pre>
+
+        <h2 id="create-dummy-files">Create dummy files</h2>
+        <p>Mine was <code>components/About.js</code>
+          and <code>components/Home.js</code></p>
+        <h2 id="update-main-jsx">Update main.jsx</h2>
+        <pre><code class="lang-js"><span class="hljs-keyword">import</span> About <span class="hljs-keyword">from</span> <span class="hljs-string">"./components/About"</span>;
+    <span class="hljs-keyword">import</span> Home <span class="hljs-keyword">from</span> <span class="hljs-string">"./components/Home"</span>;
+    <span class="hljs-keyword">import</span> { BrowserRouter as Router, Route, Routes } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-router-dom"</span>;
+    
+    ReactDOM.render(
+      &lt;Router&gt;
+        &lt;Routes&gt;
+          &lt;Route path=<span class="hljs-string">"/"</span> element={&lt;Home <span class="hljs-regexp">/&gt;} /</span>&gt;
+          &lt;Route path=<span class="hljs-string">"/about"</span> element={&lt;About <span class="hljs-regexp">/&gt;} /</span>&gt;
+        &lt;/Routes&gt;
+      &lt;/Router&gt;,
+      <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"root"</span>)
+    );
+    </code></pre>
+        <h2 id="update-about-home-components">Update About &amp; Home components</h2>
+        <p><em>About</em></p>
+        <pre><code class="lang-js"><span class="hljs-keyword">import</span> { NavLink } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-router-dom"</span>;
+    
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">About</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Who are we?<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>That feels like an existential question, don't you think?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">NavLink</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">NavLink</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+        <span class="hljs-tag">&lt;/&gt;</span>
+      );
+    }</span>
+    </code></pre>
+        <p><em>Home</em></p>
+        <pre><code class="lang-js"><span class="hljs-keyword">import</span> { NavLink } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-router-dom"</span>;
+    
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Home</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Welcome to the homepage!<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>You can do this, I believe in you.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">NavLink</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/about"</span>&gt;</span>About<span class="hljs-tag">&lt;/<span class="hljs-name">NavLink</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+        <span class="hljs-tag">&lt;/&gt;</span>
+      );
+    }</span>
+    </code></pre>
+
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+      </main>
+
+      <%- include("../partials/footer") %>
+
+  </body>
+
+</html>

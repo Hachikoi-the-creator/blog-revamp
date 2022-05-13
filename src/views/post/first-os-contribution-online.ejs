@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <!-- rel path -->
+    <%- include("../partials/head") %>
+  </head>
+
+  <body class="body">
+    <%- include("../partials/navbar") %>
+      <main class="post article">
+        <h1 id="your-first-open-source-contribution-">Your first open source contribution!</h1>
+        <h3 id="requieremnts">Requirements</h3>
+        <ul class="sub-list">
+          <li>Have git installed</li>
+          <li>know git basics (add, commit, checkout)</li>
+          <li>Github account</li>
+        </ul>
+
+        <!-- Instructions -->
+        <h3 class="Steps">Steps</h3>
+        <ul class="smol-index">
+          <li><a href="#os-online1">Find a repo you want to contribute to</a></li>
+          <li><a href="#os-online2">Fork the repo</a></li>
+          <li><a href="#os-online3">Open online VSCode</a></li>
+          <li><a href="#os-online4">Create a new branch</a></li>
+          <li><a href="#os-online4-5">Missed the branch change promt?</a></li>
+          <li><a href="#os-online5">Push changes to your branch</a></li>
+          <li><a href="#os-online6">Pull request</a></li>
+        </ul>
+
+        <!-- step 1 -->
+        <h3 id="os-online1">1. Find a repo you want to contribute to</h3>
+        <p>some examples to get your feet wet:</p>
+        <ul>
+          <li><a href="https://github.com/Hachikoi-the-creator/EasyFirstContribution">My own repo to practice</a> I can
+            personally comment your code and help you trough the problems it may surge</li>
+          <li><a href="https://github.com/EddieHubCommunity/hacktoberfest-practice">EddyHubCommunity repo</a> Github
+            community to help you in your journey</li>
+          <li><a href="https://github.com/firstcontributions/first-contributions">First Contributions repo</a> Slack
+            community to help you in your journey</li>
+        </ul>
+
+        <!-- step 2 -->
+        <h3 id="os-online2">2. Fork the repo</h3>
+        <p><em>gift me a star while you are at it :D</em></p>
+        <p>This makes a copy of the repo to your Github account, you&#39;ll update your changes here, for the ask for it
+          to be added to the main repo</p>
+        <p><img src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/fork13.png?v=1651263112605"
+            alt="my img"></p>
+
+        <!-- step 3 -->
+        <h3 id="os-online3">3. Open online VSCode</h3>
+        <p>Once you have that repo in your Github account press the key <code>.</code> in your keyboard</p>
+
+        <!-- step 4 -->
+        <h3 id="os-online4">4. Create a new branch</h3>
+        <p>This is faster than locally, just need to click the branch icon in VSCode online
+          and then create a new branch
+          <img src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/create%20branch.png?v=1651276247108"
+            alt="new branch img">
+        </p>
+
+        <!-- step 4.5 -->
+        <h3 id="os-online4-5">4.1 Missed the branch change promt?</h3>
+        <p>After you create a new branch, you&#39;ll see a promt asking you if you want to move to that branch, you
+          should
+          have clicked yes, but if you clicked outside, you can still move to the branch you just created (as long as
+          you
+          actually select teh one you just created). Just click the branch icon at the bottom</p>
+        <p><img
+            src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/forgor%20to%20change%20branch.png?v=1651276527846"
+            alt="Missed checkout promt"></p>
+
+        <!-- step 5 -->
+        <h3 id="os-online5">5. Push changes to your branch</h3>
+        <p>Here we can feel how easier it is compared to doing it locally, just click the ✔️ after adding a commit
+          message
+        </p>
+        <p><img
+            src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/commit%20changes.png?v=1651276388061"
+            alt="Commit &amp; push GUI"></p>
+
+        <!-- step 6 -->
+        <h3 id="os-online6">6. Pull request</h3>
+        <p>Go to your copy of the repo in your Github account, then press this button</p>
+        <p><img src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/pullRequest.png?v=1651276727349"
+            alt="pull request button"></p>
+      </main>
+
+      <%- include("../partials/footer") %>
+
+  </body>
+
+</html>

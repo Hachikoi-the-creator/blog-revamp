@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <!-- rel path -->
+    <%- include("../partials/head") %>
+  </head>
+
+  <body class="body">
+    <%- include("../partials/navbar") %>
+      <main class="post article">
+        <h1 id="your-first-open-source-contribution-">Your first open source contribution!</h1>
+        <h3 id="requieremnts">Requirements</h3>
+        <ul class="sub-list">
+          <li>Have git installed</li>
+          <li>know git basics (add, commit, checkout)</li>
+          <li>Github account</li>
+        </ul>
+
+        <!-- Instructions -->
+        <h3 class="Steps">Steps</h3>
+        <ul class="smol-index">
+          <li><a href="#os-local1">Find a repo you want to contribute to</a></li>
+          <li><a href="#os-local2">Fork the repo</a></li>
+          <li><a href="#os-local3">Download the repo</a></li>
+          <li><a href="#os-local4">Clone the repo</a></li>
+          <li><a href="#os-local5">Open the repo in VSCode</a></li>
+          <li><a href="#os-local6">Commit your changes</a></li>
+          <li><a href="#os-local7">Create a new branch</a></li>
+          <li><a href="#os-local8">Push your changes to your branch</a></li>
+          <li><a href="#os-local9">Create a pull request</a></li>
+        </ul>
+
+        <!-- step 1 -->
+        <h3 id="os-local1">1. Find a repo you want to contribute to</h3>
+        <p>some examples to get your feet wet:</p>
+        <ul>
+          <li><a href="https://github.com/Hachikoi-the-creator/EasyFirstContribution">My own repo to practice</a> I can
+            personally comment your code and help you trough the problems it may surge</li>
+          <li><a href="https://github.com/EddieHubCommunity/hacktoberfest-practice">EddyHubCommunity repo</a> Github
+            community to help you in your journey</li>
+          <li><a href="https://github.com/firstcontributions/first-contributions">First Contributions repo</a> Slack
+            community to help you in your journey</li>
+        </ul>
+
+        <!-- step 2 -->
+        <h3 id="os-local2">2. Fork the repo</h3>
+        <p><em>gift me a star while you are at it :D</em></p>
+        <p>This makes a copy of the repo to your Github account, you&#39;ll update your changes here, for the ask for it
+          to be added to the main repo</p>
+        <p><img src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/fork13.png?v=1651263112605"
+            alt="my img"></p>
+
+        <!-- step 3 -->
+        <h3 id="os-local3">3. Download the repo</h3>
+        <p>After that is done you need to get a copy of that repo, and for that you need to get a link </p>
+        <h5>First click this button</h5>
+        <p>
+          <img src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/code1.png?v=1651263015188"
+            alt="click the code button">
+        </p>
+
+        <h5>Then you click this one to get a copy of the link</h5>
+        <p>
+          <img src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/code2.png?v=1651263112557"
+            alt="actual button to get the link">
+        </p>
+
+        <!-- step 4 -->
+        <h3 id="os-local4">4. Clone the repo</h2>
+          <p>Now you need to open your git bash where you want to download the repo.</p>
+          <ul>
+            <li>in your desktop -&gt; right click -&gt; &#39;Git Bash Here&#39; - for example</li>
+            <li>Copy the link after <code>git clone your_link</code>, and press enter</li>
+          </ul>
+          <p><img
+              src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/git%20clone%20exam.png?v=1651263878632"
+              alt="git clone example"></p>
+
+          <!-- step 5 -->
+          <h3 id="os-local5">5. Open the repo in VSCode</h3>
+          <p>Just make the changes you want to add, in the case of these practice repos, write your name and social
+            media.
+          </p>
+
+          <!-- step 6 -->
+          <h3 id="os-local6">6. Commit your changes</h3>
+
+          <pre><code class="lang-shell">git <span class="hljs-keyword">add</span><span class="bash"> .
+</span>git commit -m <span class="hljs-string">"my msg"</span></code></pre>
+
+          <!-- step 7 -->
+          <h3 id="os-local7">7. Create a new branch</h3>
+          <p>You need to create a new git branch whit <code>git checkout -b my_branch</code>. <em>my_branch</em> can be
+            any
+            name you wan to give it.</p>
+          <p><img
+              src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/git%20chechkout.png?v=1651264263672"
+              alt="my new branch"></p>
+
+          <!-- step 8 -->
+          <h3 id="os-local8">8. Push your changes to your branch</h3>
+          <p><em>one tip: do a normal <code>git push</code></em> git will detect that you are in a different branch from
+            main, and will give you the actually command you need to use</p>
+          <p><img
+              src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/git%20pupsh%20hack.png?v=1651265039499"
+              alt="git push own branch"></p>
+
+          <h4>now after the real command you should see something like this</h4>
+          <p><img
+              src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/git%20push%20branch.png?v=1651265784131"
+              alt="Git push correct branch"></p>
+
+          <!-- step 9 -->
+          <h3 id="os-local9">9. Create a pull request</h3>
+          <p>Now that you pushed your changes to github, you&#39;ll automagically be in that branch once you go the
+            forked
+            repo in your Github account, and you should see this button</p>
+          <p><img src="https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/pullRequest.png?v=1651276727349"
+              alt="pull request btn"></p>
+      </main>
+      <%- include("../partials/footer") %>
+
+  </body>
+
+</html>
