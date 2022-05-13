@@ -1,0 +1,44 @@
+@use "./variables" as *;
+// // Red-ish
+// $dark: rgba(54, 0, 0, 0.9);
+// $re1: #6b2d5c;
+// $re2: #f0386b;
+// $re3: #ff5376;
+// $re4: #f8c0c8;
+// $re6: #ebb0bb;
+// $re5: #e2c290;
+// ---------
+
+// -----------------
+.footer {
+  width: fit-content;
+  margin-top: auto;
+
+  &--links {
+    width: 100vw;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $dark;
+    color: $re4;
+  }
+
+  li,
+  a,
+  abbr {
+    padding: 7px;
+    text-decoration: none;
+  }
+
+  a {
+    font-size: 1.4rem;
+    color: $re4;
+
+    &:hover {
+      color: $re3;
+    }
+  }
+
+  // SPECIFIC ICONS
+}

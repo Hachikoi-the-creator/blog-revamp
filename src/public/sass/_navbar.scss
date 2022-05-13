@@ -1,0 +1,59 @@
+@use "./variables" as *;
+// // Red-ish
+// $dark: rgba(54, 0, 0, 0.9);
+// $re1: #6b2d5c;
+// $re2: #f0386b;
+// $re3: #ff5376;
+// $re4: #f8c0c8;
+// $re6: #ebb0bb;
+// $re5: #e2c290;
+// // ---------
+
+svg {
+  width: 40px;
+  fill: $re4;
+
+  &:hover {
+    fill: $re3;
+  }
+}
+
+// -----------------
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: fit-content;
+  background-color: $dark;
+
+  * {
+    position: relative;
+    padding: 3px;
+  }
+  // fix the second svg
+  &--item1 {
+    margin-left: 10px;
+  }
+
+  &--item2 {
+    margin-right: 10px;
+  }
+
+  .welcome {
+    font-size: 1.4rem;
+    color: $re4;
+  }
+
+  &--list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+
+    li:nth-child(1) {
+      margin-right: auto;
+    }
+    li:nth-child(2) {
+      margin-right: auto;
+    }
+  }
+}

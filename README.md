@@ -1,46 +1,33 @@
-# Screenshot
+# Table of contents
+- [Table of contents](#table-of-contents)
+  - [SASS](#sass)
+  - [Screenshot](#screenshot)
+  - [Instructions](#instructions)
+  - [Add new post](#add-new-post)
+  - [STYLING notes](#styling-notes)
+  - [Heroku tutorial](#heroku-tutorial)
+
+
+## SASS
+sass -w sass:css -s compressed
+sass -w src/public/sass:src/public/css -s compressed
+
+## Screenshot
 ![](docs/screenshot.png)
 
-### Installation
+## Instructions
+- cd blog-revamp
+- npm i
+- npm run dev
 
-clone the repo
+## Add new post
+- add the img and code inside index.ejs
+  - add the link to the new route
+- add the new route to routes.js
+- create a new .ejs file inside /post
 
-```
-git clone https://github.com/FaztWeb/first-node-express-app
-```
+## STYLING notes
+To make a new post just copy the styles in `TEMPLATE.ejs`
 
-move to the folder
-
-```
-cd first-node-express-app
-```
-
-install dependencies:
-
-```
-npm install
-```
-
-execute the project
-
-```
-npm run dev
-```
-
-
-# Your First Nodejs/Express Website
-This is the repository of a very simple nodejs real project
-The goal of this code, is that you understand all the code
-and the reason Why I choose certain modules.
-
-# You will learn
-- How to start a nodejs project
-- How to create routes for your server application
-- How to use a template engine like ejs, handlebars, pug, etc.
-- Call Assets from CDNs and use static files
-- Divide content using partials feature from Template engines
-- Deploy our app using a simple service called Now(A service from Zeit Company)
-
-# Issues
-For any problem that you find, open an issue here on github or if
-native language is Spanish join us on [Discord](https://discord.gg/37PHuNw)
+## Heroku tutorial
+https://devcenter.heroku.com/articles/deploying-nodejs

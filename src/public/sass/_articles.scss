@@ -1,0 +1,48 @@
+@use "./variables" as *;
+// // Red-ish
+// $dark: rgba(54, 0, 0, 0.9);
+// $re1: #6b2d5c;
+// $re2: #f0386b;
+// $re3: #ff5376;
+// $re4: #f8c0c8;
+// $re6: #ebb0bb;
+// $re5: #cee1ff;
+// ---------
+
+// GENERAL STYLES
+.article {
+  width: 60vw !important;
+  margin: 0 auto;
+}
+
+.body .article {
+  background-color: $re5;
+
+  a {
+    color: $re1;
+    text-decoration: underline dotted $re3 3px;
+
+    &:hover {
+      color: $dark;
+      text-decoration: underline dotted $re2 4px;
+    }
+  }
+
+  .intro {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  // requiremets / features (short tutorial, fast, cute)
+  .sub-list {
+    li {
+      list-style-type: "\1F44D"; // thumbs up sign
+    }
+  }
+
+  .smol-index {
+    li {
+      margin: 10px 0;
+    }
+  }
+}
