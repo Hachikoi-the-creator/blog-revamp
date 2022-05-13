@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <!-- rel path -->
+    <%- include("../partials/head") %>
+  </head>
+
+  <body class="body">
+    <%- include("../partials/navbar") %>
+      <main class="post article">
+        <section class="intro">
+          <h1 id="intro">Intro</h1>
+          <p>The burger appear on width &lt; 700px &amp; shows only when the burger is clicked, but hiddes when the
+            burger
+            is clicked, there&#39;s a click outside the navbar or there&#39;s a click in any link</p>
+        </section>
+        <!-- NAVIGATION TINGHY -->
+        <ul class="sub-list">
+          <li><em>Minimal JS</em></li>
+          <li><em>No ::after or ::before</em></li>
+          <li><em>Only 1 nesting whit scss (end of navbar), basically vanilla css</em></li>
+        </ul>
+        <h3 id="html-markup">HTML markup</h3>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- burger --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"burger-click"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"burger1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"burger2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"burger3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- navbar --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>adc<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>adc<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>adc<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>adc<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+</code></pre>
+        <h3 id="hamburger-animation-sass-">Hamburger animation (SASS)</h3>
+        <pre><code class="lang-css"><span class="hljs-comment">/* input area */</span>
+<span class="hljs-selector-class">.burger-click</span> {
+  <span class="hljs-attribute">z-index</span>: <span class="hljs-number">10</span>;
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-attribute">position</span>: fixed;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid black;
+  <span class="hljs-attribute">background-color</span>: grey;
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-comment">/* Basic burger styles */</span>
+<span class="hljs-selector-class">.burger1</span>,
+<span class="hljs-selector-class">.burger2</span>,
+<span class="hljs-selector-class">.burger3</span> {
+  <span class="hljs-attribute">position</span>: fixed;
+  <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">""</span>;
+  <span class="hljs-attribute">background-color</span>: black;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50vw</span>;
+  <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">0.5s</span> cubic-bezier(<span class="hljs-number">0.77</span>, <span class="hljs-number">0.2</span>, <span class="hljs-number">0.05</span>, <span class="hljs-number">1</span>),
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">0.5s</span> cubic-bezier(<span class="hljs-number">0.77</span>, <span class="hljs-number">0.2</span>, <span class="hljs-number">0.05</span>, <span class="hljs-number">1</span>), opacity <span class="hljs-number">0.55s</span> ease;
+}
+
+<span class="hljs-selector-class">.burger1</span> {
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">30px</span>;
+}
+
+<span class="hljs-selector-class">.burger2</span> {
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">39px</span>;
+}
+
+<span class="hljs-selector-class">.burger3</span> {
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">49px</span>;
+  <span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-comment">/* click behaivour */</span>
+<span class="hljs-selector-class">.burger-click</span>:checked ~ <span class="hljs-selector-class">.burger1</span> {
+  <span class="hljs-attribute">transform</span>: rotate(-<span class="hljs-number">45deg</span>) translate(-<span class="hljs-number">7px</span>, <span class="hljs-number">7px</span>);
+  <span class="hljs-attribute">background-color</span>: rgb(<span class="hljs-number">255</span>, <span class="hljs-number">236</span>, <span class="hljs-number">31</span>);
+}
+
+<span class="hljs-selector-class">.burger-click</span>:checked ~ <span class="hljs-selector-class">.burger2</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.1</span>;
+  <span class="hljs-attribute">background-color</span>: red;
+}
+
+<span class="hljs-selector-class">.burger-click</span>:checked ~ <span class="hljs-selector-class">.burger3</span> {
+  <span class="hljs-attribute">background-color</span>: rgb(<span class="hljs-number">255</span>, <span class="hljs-number">238</span>, <span class="hljs-number">49</span>);
+  <span class="hljs-attribute">transform</span>: rotate(<span class="hljs-number">45deg</span>) translate(-<span class="hljs-number">8px</span>, -<span class="hljs-number">18px</span>);
+}
+
+<span class="hljs-comment">// &gt; 700px</span>
+@media screen and (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">700px</span>) {
+  <span class="hljs-comment">// hidde the burger on bigger screens</span>
+  <span class="hljs-selector-class">.burger1</span>,
+  <span class="hljs-selector-class">.burger2</span>,
+  <span class="hljs-selector-class">.burger3</span>,
+  <span class="hljs-selector-class">.burger-click</span> {
+    <span class="hljs-attribute">display</span>: none;
+  }
+}
+</code></pre>
+        <h3 id="navbar-styles-sass-">Navbar styles (SASS)</h3>
+        <pre><code class="lang-css"><span class="hljs-selector-class">.navbar</span> {
+  <span class="hljs-attribute">list-style</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">70vw</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
+  <span class="hljs-attribute">background-color</span>: palegoldenrod;
+  <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">0.4s</span> ease-in-out;
+  <span class="hljs-attribute">transform</span>: translateX(-<span class="hljs-number">100%</span>);
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: space-around;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">5%</span>;
+}
+
+<span class="hljs-comment">// the input that triggers the burger</span>
+<span class="hljs-selector-class">.burger-click</span>:checked ~ <span class="hljs-selector-class">.navbar</span> {
+  <span class="hljs-attribute">transform</span>: translateX(<span class="hljs-number">0</span>);
+}
+
+<span class="hljs-comment">// &gt; 700px</span>
+@<span class="hljs-keyword">media</span> screen and (min-width: 700px) {
+  <span class="hljs-comment">// deactivate animation</span>
+  <span class="hljs-selector-class">.burger-click</span>:checked ~ <span class="hljs-selector-class">.navbar</span> {
+    <span class="hljs-attribute">transform</span>: unset;
+  }
+
+  <span class="hljs-selector-class">.navbar</span> {
+    <span class="hljs-attribute">display</span>: unset;
+    <span class="hljs-attribute">transform</span>: translateX(<span class="hljs-number">0</span>);
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100vw</span>;
+    <span class="hljs-attribute">height</span>: fit-content;
+    <span class="hljs-attribute">list-style</span>: none;
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">flex-direction</span>: row;
+    <span class="hljs-attribute">align-items</span>: center;
+    <span class="hljs-attribute">justify-content</span>: center;
+    <span class="hljs-attribute">background-color</span>: palegreen;
+
+    <span class="hljs-comment">// safe zone for clicks on &lt;a&gt; inside &lt;li&gt;</span>
+    * {
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">13px</span>;
+    }
+  }
+}
+</code></pre>
+        <h3 id="logic-for-click-outside-elements-js-">Logic for click outside elements(JS)</h3>
+        <pre><code class="lang-js"><span class="hljs-keyword">const</span> checkBox = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">'.burger-click'</span>);
+<span class="hljs-keyword">const</span> navbar = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">'.navbar'</span>);
+<span class="hljs-keyword">const</span> tableElements = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelectorAll</span>(<span class="hljs-string">".link"</span>);
+
+<span class="hljs-comment">// hidde the mobile nav, once a link s clicked</span>
+tableElements.forEach((element) =&gt; element.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; checkBox.checked = <span class="hljs-keyword">false</span>));
+
+<span class="hljs-comment">// Hidde menu once there's a click outside the nav, &amp; respect the burger</span>
+<span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'click'</span>, (event) =&gt; {
+  <span class="hljs-keyword">const</span> navClicked = navbar.contains(event.target);
+  <span class="hljs-keyword">const</span> burgerClicked = checkBox.contains(event.target);
+
+  <span class="hljs-keyword">if</span> (!navClicked &amp;&amp; !burgerClicked) {
+    checkBox.checked = <span class="hljs-keyword">false</span>;
+  }
+});
+</code></pre>
+      </main>
+      <%- include("../partials/footer") %>
+  </body>
+
+</html>
