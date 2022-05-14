@@ -31,8 +31,11 @@ h5,
 h6 {
   margin-top: 40px;
   width: 100%;
-  // text-align: center;
   margin: 15px;
+}
+
+.main.title {
+  text-align: center;
 }
 
 img {
@@ -78,7 +81,22 @@ a {
     h4 {
       padding: 7px;
     }
+
+    p {
+      text-align: center;
+    }
   }
 }
 
 // TODO: add breakpoints for the grid
+@media screen and (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
