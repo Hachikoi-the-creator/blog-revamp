@@ -13,7 +13,8 @@ sass -w sass:css -s compressed
 sass -w src/public/sass:src/public/css -s compressed
 
 ## Screenshot
-![](docs/screenshot.png)
+<!-- ![](docs/screenshot.png) -->
+![site screenshot](https://cdn.glitch.global/10425db4-6abf-43d4-9e55-d3f1d76614b7/webpage.webp?v=1652487637481)
 
 ## Instructions
 - cd blog-revamp

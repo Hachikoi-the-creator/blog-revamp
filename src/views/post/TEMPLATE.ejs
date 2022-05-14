@@ -1,0 +1,39 @@
+<!-- THIS IS THE DEFAULT LAYOUT EVERY POST NEEDS TO HAVE -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <!-- rel path -->
+    <%- include("../partials/head") %>
+  </head>
+
+  <body class="body">
+    <%- include("../partials/navbar") %>
+      <main class="post article">
+
+      </main>
+
+      <%- include("../partials/footer") %>
+
+  </body>
+
+</html>
+
+<h3 id="requieremnts">Requirements</h3>
+<ul class="sub-list">
+  <li>Have git installed</li>
+  <li>know git basics (add, commit, checkout)</li>
+  <li>Github account</li>
+</ul>
+<!-- instructions -->
+<h3 class="Steps"></h3>
+<ul class="smol-index">
+  <li><a href="#os-local1">Find a repo you want to contribute to</a></li>
+  <li><a href="#os-local2">Fork the repo</a></li>
+</ul>
+
+<!-- IMPORTANT quick fix for images -->
+<!-- PUT all images inside a `p` -->
